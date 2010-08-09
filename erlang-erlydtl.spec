@@ -8,6 +8,7 @@ License:        MIT
 URL:            http://code.google.com/p/erlydtl/
 Source0:        http://erlydtl.googlecode.com/files/erlydtl-0.6.0.tar.gz
 Patch0:         erlang-erlydtl-0.6.0-tests.patch
+Patch1:         erlang-erlydtl-0.6.0-r14a.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  erlang
@@ -23,6 +24,7 @@ returns a fully rendered document.
 %setup -q -n erlydtl-%{version}
 
 %patch0 -p0
+%patch1 -p0
 
 %build
 make
@@ -42,6 +44,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
+%dir %{_libdir}/erlang/lib/erlydtl-%{version}  
 %{_libdir}/erlang/lib/erlydtl-%{version}/*
 %doc README
 %doc examples
