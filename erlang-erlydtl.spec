@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           erlang-erlydtl
 Version:        0.6.0
 Release:        1%{?dist}
@@ -11,6 +13,7 @@ Patch0:         erlang-erlydtl-0.6.0-tests.patch
 Patch1:         erlang-erlydtl-0.6.0-r14a.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
+Provides:       ErlyDTL = %{version}-%{release}
 BuildRequires:  erlang
 Requires:       erlang
 
@@ -22,12 +25,16 @@ returns a fully rendered document.
 
 %prep
 %setup -q -n erlydtl-%{version}
+find examples/ -type f -executable -exec chmod -x {} \;
 
 %patch0 -p0
 %patch1 -p0
 
 %build
-make
+make %{?_smp_mflags}
+
+%check
+make test
 
 
 %install
