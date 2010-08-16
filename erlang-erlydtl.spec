@@ -21,7 +21,7 @@ Requires:       erlang
 ErlyDTL is an Erlang implementation of the Django Template Language. The
 erlydtl module compiles Django Template source code into Erlang bytecode. The
 compiled template has a "render" function that takes a list of variables and
-returns a fully rendered document. 
+returns a fully rendered document
 
 %prep
 %setup -q -n erlydtl-%{version}
