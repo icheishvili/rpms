@@ -55,6 +55,6 @@ possible) both synchronous and asynchronous approaches.
 %doc examples
 
 %changelog
-* Sat Oct 2 2010 Ilia Cheishvili <ilia.cheishvili@gmail.com> - 0.6.0-1
+* Sat Oct 2 2010 Ilia Cheishvili <ilia.cheishvili@gmail.com> - 0.5.2-1
 - Initial Package
 
