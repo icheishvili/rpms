@@ -1,4 +1,3 @@
-%define debug_package %{nil}
 %define short_name pika
 
 Name:           python-%{short_name}
@@ -7,15 +6,17 @@ Release:        1%{?dist}
 Summary:        AMQP 0-8 and 0-9-1 client library for Python
 
 Group:          Development/Libraries
-License:        MPL/GPL 2.0
+License:        MPLv1.1 or GPLv2
 URL:            http://github.com/tonyg/pika
 # The tarball comes from here: http://github.com/tonyg/pika/tarball/v0.5.2
 # GitHub has layers of redirection and renames that make this a troublesome
 # URL to include directly.
 Source0:        tonyg-%{short_name}-v%{version}-0-gba01f9e.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildArch:      noarch
 
 BuildRequires:  python-setuptools
+BuildRequires:  python-devel
 Requires:       python
 
 %description

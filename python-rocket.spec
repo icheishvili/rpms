@@ -1,4 +1,3 @@
-%define debug_package %{nil}
 %define upstream_name Rocket
 
 Name:           python-rocket
@@ -11,8 +10,10 @@ License:        MIT
 URL:            http://pypi.python.org/pypi/rocket/
 Source0:        http://pypi.python.org/packages/source/r/rocket/Rocket-1.1.1.zip
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildArch:      noarch
 
 BuildRequires:  python-setuptools
+BuildRequires:  python-devel
 Requires:       python
 
 %description
