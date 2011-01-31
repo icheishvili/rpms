@@ -4,11 +4,11 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print (get_python_lib())")}
 %endif
 
-%define upstream_name Rocket
-%define normal_name rocket
+%global upstream_name Rocket
+%global normal_name rocket
 
 Name:           python-%{normal_name}
-Version:        1.2.2
+Version:        1.2.3
 Release:        1%{?dist}
 Summary:        Modern, multi-threaded, comet-friendly WSGI web server
 
@@ -19,14 +19,13 @@ Source0:        http://pypi.python.org/packages/source/r/rocket/Rocket-%{version
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 
+Requires:       python
 BuildRequires:  python-setuptools
 BuildRequires:  python-devel
 %if 0%{?with_python3}
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-devel
 Requires:       python3
-%else
-Requires:       python
 %endif # if with_python3
 
 
@@ -117,5 +116,5 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Mon Jan 10 2010 Ilia Cheishvili <ilia.cheishvili@gmail.com> - 1.2.2-1
+* Mon Jan 10 2010 Ilia Cheishvili <ilia.cheishvili@gmail.com> - 1.2.3-1
 - Initial Package
