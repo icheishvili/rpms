@@ -8,7 +8,7 @@
 %global normal_name rocket
 
 Name:           python-%{normal_name}
-Version:        1.2.3
+Version:        1.2.4
 Release:        1%{?dist}
 Summary:        Modern, multi-threaded, comet-friendly WSGI web server
 
@@ -116,5 +116,8 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Mon Jan 10 2010 Ilia Cheishvili <ilia.cheishvili@gmail.com> - 1.2.3-1
+- Update to version 1.2.4
+
 * Mon Jan 10 2010 Ilia Cheishvili <ilia.cheishvili@gmail.com> - 1.2.3-1
 - Initial Package
