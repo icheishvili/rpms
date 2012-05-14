@@ -16,7 +16,6 @@ Group:          Development/Libraries
 License:        MIT
 URL:            http://pypi.python.org/pypi/rocket/
 Source0:        http://pypi.python.org/packages/source/r/rocket/Rocket-%{version}.zip
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 
 Requires:       python
@@ -103,13 +102,11 @@ popd
 rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,-)
 %{python_sitelib}/%{upstream_name}-%{version}*
 %{python_sitelib}/%{normal_name}
 
 %if 0%{?with_python3}
 %files -n python3-rocket
-%defattr(-,root,root,-)
 %{python3_sitelib}/%{upstream_name}-%{version}*
 %{python3_sitelib}/%{normal_name}
 %endif # with_python3
