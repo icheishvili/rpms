@@ -55,10 +55,11 @@ but with added flexibility, speed and concurrency.
 
 %prep
 %setup -q -n %{upstream_name}-%{version}
+%{__rm} -rf %{upstream_name}.egg_info
 
 %if 0%{?with_python3}
-rm -rf %{py3dir}
-cp -a . %{py3dir}
+%{__rm} -rf %{py3dir}
+%{__cp} -a . %{py3dir}
 find %{py3dir} -name '*.py' | xargs sed -i '1s|^#!python|#!%{__python3}|'
 %endif # with_python3
 
@@ -113,8 +114,5 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Mon Jan 10 2010 Ilia Cheishvili <ilia.cheishvili@gmail.com> - 1.2.3-1
-- Update to version 1.2.4
-
-* Mon Jan 10 2010 Ilia Cheishvili <ilia.cheishvili@gmail.com> - 1.2.3-1
+* Sun Jan 06 2013 Ilia Cheishvili <ilia.cheishvili@gmail.com> - 1.2.4-1
 - Initial Package
